@@ -1,6 +1,6 @@
-# 📡 Caelus - ABC ↔ MusicXML Transformation Engine
+# 🎼 ABCWeaver - ABC ↔ MusicXML Transformation Engine
 
-**Caelus** is a powerful Python package for bidirectional transformation between ABC notation and MusicXML format, enhanced with Redis stream processing capabilities through the `nyro` package.
+**ABCWeaver** is a powerful Python package for bidirectional transformation between ABC notation and MusicXML format, enhanced with Redis stream processing capabilities through the `nyro` package.
 
 ## ✨ Features
 
@@ -14,43 +14,43 @@
 ## 🚀 Installation
 
 ```bash
-pip install caelus
+pip install abcweaver
 ```
 
 For development:
 ```bash
-pip install caelus[dev]
+pip install abcweaver[dev]
 ```
 
 ## 📖 Quick Start
 
 ### Create MusicXML from ABC
 ```bash
-caelus create "C D E F G A B c" --output melody.musicxml --title "Simple Scale"
+abcweaver create "C D E F G A B c" --output melody.musicxml --title "Simple Scale"
 ```
 
 ### Insert ABC into existing MusicXML
 ```bash
-caelus insert score.musicxml "G2 A2 B2 c2" --part "Melody" --instrument "Flute"
+abcweaver insert score.musicxml "G2 A2 B2 c2" --part "Melody" --instrument "Flute"
 ```
 
 ### Extract ABC from MusicXML
 ```bash
-caelus extract score.musicxml --part "P1" --output melody.abc
+abcweaver extract score.musicxml --part "P1" --output melody.abc
 ```
 
 ### Stream Processing with Redis
 ```bash
 # Send ABC to Redis stream
-caelus stream-send "C D E F" --stream "song_evolution" 
+abcweaver stream-send "C D E F" --stream "song_evolution" 
 
 # Consume and process
-caelus stream-consume --stream "song_evolution" --target output.musicxml
+abcweaver stream-consume --stream "song_evolution" --target output.musicxml
 ```
 
 ## 🏗️ Architecture
 
-Caelus is built with modular architecture:
+ABCWeaver is built with modular architecture:
 
 - **Core**: ABC parsing, MusicXML handling, format conversion
 - **Streams**: Redis integration via `nyro` package

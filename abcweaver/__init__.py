@@ -1,5 +1,5 @@
 """
-📡 Caelus - ABC ↔ MusicXML Transformation Engine
+🎼 ABCWeaver - ABC ↔ MusicXML Transformation Engine
 
 A powerful Python package for bidirectional transformation between ABC notation 
 and MusicXML format, enhanced with Redis stream processing capabilities.

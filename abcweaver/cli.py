@@ -1,7 +1,7 @@
 """
-📡 Caelus CLI Interface
+🎼 ABCWeaver CLI Interface
 
-Click-based command line interface for all caelus operations.
+Click-based command line interface for all abcweaver operations.
 """
 
 import click
@@ -12,21 +12,21 @@ console = Console()
 
 @click.group()
 @click.version_option()
-def caelus():
-    """📡 Caelus - ABC ↔ MusicXML Transformation Engine
+def abcweaver():
+    """🎼 ABCWeaver - ABC ↔ MusicXML Transformation Engine
     
     Bidirectional transformation between ABC notation and MusicXML format
     with Redis stream processing capabilities.
     
     Part of the G.Music Assembly ecosystem.
     """
-    console.print(Panel.fit("📡 [bold blue]Caelus[/bold blue] - Musical Transformation Engine", style="blue"))
+    console.print(Panel.fit("🎼 [bold blue]ABCWeaver[/bold blue] - Musical Transformation Engine", style="blue"))
 
-@caelus.command()
+@abcweaver.command()
 @click.argument('abc_string')
 @click.option('--output', '-o', required=True, help='Output MusicXML file path')
 @click.option('--title', default='Untitled', help='Score title')
-@click.option('--composer', default='Caelus', help='Composer name')
+@click.option('--composer', default='ABCWeaver', help='Composer name')
 def create(abc_string, output, title, composer):
     """Create new MusicXML from ABC notation"""
     console.print(f"[green]Creating MusicXML:[/green] {output}")
@@ -34,7 +34,7 @@ def create(abc_string, output, title, composer):
     # TODO: Implement create functionality
     console.print("[red]Not implemented yet[/red]")
 
-@caelus.command()
+@abcweaver.command()
 @click.argument('musicxml_file')
 @click.argument('abc_string')
 @click.option('--part-name', default='New Part', help='Name of the new part')
@@ -49,7 +49,7 @@ def insert(musicxml_file, abc_string, part_name, instrument, clef_sign, clef_lin
     # TODO: Implement insert functionality
     console.print("[red]Not implemented yet[/red]")
 
-@caelus.command()
+@abcweaver.command()
 @click.argument('musicxml_file')
 @click.option('--part', '-p', help='Part ID to extract (e.g., P1)')
 @click.option('--output', '-o', required=True, help='Output ABC file path')
@@ -62,7 +62,7 @@ def extract(musicxml_file, part, output, measures):
     # TODO: Implement extract functionality
     console.print("[red]Not implemented yet[/red]")
 
-@caelus.command()
+@abcweaver.command()
 @click.argument('input_file')
 @click.option('--output', '-o', required=True, help='Output file path')
 @click.option('--format', 'output_format', type=click.Choice(['abc', 'musicxml']), required=True, help='Output format')
@@ -74,7 +74,7 @@ def convert(input_file, output, output_format, part):
     # TODO: Implement convert functionality
     console.print("[red]Not implemented yet[/red]")
 
-@caelus.command()
+@abcweaver.command()
 @click.argument('file_path')
 @click.option('--format', 'file_format', type=click.Choice(['abc', 'musicxml']), help='File format (auto-detect if not specified)')
 @click.option('--repair', is_flag=True, help='Attempt to repair issues')
@@ -86,14 +86,14 @@ def validate(file_path, file_format, repair):
     console.print("[red]Not implemented yet[/red]")
 
 # Stream commands group
-@caelus.group()
+@abcweaver.group()
 def stream():
     """Redis stream operations via nyro package"""
     pass
 
 @stream.command('send')
 @click.argument('abc_string')
-@click.option('--stream-name', default='caelus_abc', help='Redis stream name')
+@click.option('--stream-name', default='abcweaver_abc', help='Redis stream name')
 @click.option('--metadata', help='Additional metadata (JSON format)')
 def stream_send(abc_string, stream_name, metadata):
     """Send ABC chunk to Redis stream"""
@@ -103,7 +103,7 @@ def stream_send(abc_string, stream_name, metadata):
     console.print("[red]Not implemented yet[/red]")
 
 @stream.command('consume')
-@click.option('--stream-name', default='caelus_abc', help='Redis stream name')
+@click.option('--stream-name', default='abcweaver_abc', help='Redis stream name')
 @click.option('--target', help='Target MusicXML file for processed ABC')
 @click.option('--count', default=1, help='Number of messages to consume')
 def stream_consume(stream_name, target, count):
@@ -114,4 +114,4 @@ def stream_consume(stream_name, target, count):
     console.print("[red]Not implemented yet[/red]")
 
 if __name__ == "__main__":
-    caelus()
+    abcweaver()

@@ -3,9 +3,9 @@ requires = ["setuptools>=61.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "caelus"
+name = "abcweaver"
 version = "0.1.0"
-description = "📡 ABC ↔ MusicXML Transformation Engine with Redis Stream Processing"
+description = "🎼 ABC ↔ MusicXML Transformation Engine with Redis Stream Processing"
 readme = "README.md"
 requires-python = ">=3.8"
 license = {text = "MIT"}
@@ -42,12 +42,12 @@ dev = [
 ]
 
 [project.scripts]
-caelus = "caelus.cli:caelus"
+abcweaver = "abcweaver.cli:abcweaver"
 
 [project.urls]
-Homepage = "https://github.com/gmusic1007/caelus"
-Repository = "https://github.com/gmusic1007/caelus.git"
-Issues = "https://github.com/gmusic1007/caelus/issues"
+Homepage = "https://github.com/gmusic1007/abcweaver"
+Repository = "https://github.com/gmusic1007/abcweaver.git"
+Issues = "https://github.com/gmusic1007/abcweaver/issues"
 
 [tool.black]
 line-length = 88

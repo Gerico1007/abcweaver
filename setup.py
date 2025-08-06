@@ -10,14 +10,14 @@ with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 setup(
-    name="caelus",
+    name="abcweaver",
     version="0.1.0",
     author="G.Music Assembly",
     author_email="assembly@gmusic.com",
-    description="📡 ABC ↔ MusicXML Transformation Engine with Redis Stream Processing",
+    description="🎼 ABC ↔ MusicXML Transformation Engine with Redis Stream Processing",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/gmusic1007/caelus",
+    url="https://github.com/gmusic1007/abcweaver",
     packages=find_packages(),
     classifiers=[
         "Development Status :: 3 - Alpha",
@@ -49,7 +49,7 @@ setup(
     },
     entry_points={
         "console_scripts": [
-            "caelus=caelus.cli:caelus",
+            "abcweaver=abcweaver.cli:abcweaver",
         ],
     },
     include_package_data=True,
