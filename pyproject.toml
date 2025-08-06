@@ -45,9 +45,9 @@ dev = [
 abcweaver = "abcweaver.cli:abcweaver"
 
 [project.urls]
-Homepage = "https://github.com/gmusic1007/abcweaver"
-Repository = "https://github.com/gmusic1007/abcweaver.git"
-Issues = "https://github.com/gmusic1007/abcweaver/issues"
+Homepage = "https://github.com/gerico1007/abcweaver"
+Repository = "https://github.com/gerico1007/abcweaver.git"
+Issues = "https://github.com/gerico1007/abcweaver/issues"
 
 [tool.black]
 line-length = 88

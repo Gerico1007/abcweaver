@@ -17,7 +17,7 @@ setup(
     description="🎼 ABC ↔ MusicXML Transformation Engine with Redis Stream Processing",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/gmusic1007/abcweaver",
+    url="https://github.com/gerico1007/abcweaver",
     packages=find_packages(),
     classifiers=[
         "Development Status :: 3 - Alpha",

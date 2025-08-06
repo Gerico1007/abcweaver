@@ -6,8 +6,8 @@ Thank you for your interest in contributing to Caelus! This document provides gu
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/gmusic1007/caelus.git
-   cd caelus
+   git clone https://github.com/gerico1007/abcweaver.git
+   cd abcweaver
    ```
 
 2. **Create a virtual environment**
@@ -30,7 +30,7 @@ pytest
 
 Run with coverage:
 ```bash
-pytest --cov=caelus --cov-report=html
+pytest --cov=abcweaver --cov-report=html
 ```
 
 ## 📝 Code Style
@@ -42,8 +42,8 @@ We use:
 
 Format your code:
 ```bash
-black caelus/
-flake8 caelus/
+black abcweaver/
+flake8 abcweaver/
 ```
 
 ## 🔄 Development Workflow
@@ -61,8 +61,8 @@ flake8 caelus/
 3. **Test your changes**
    ```bash
    pytest
-   black caelus/
-   flake8 caelus/
+   black abcweaver/
+   flake8 abcweaver/
    ```
 
 4. **Commit your changes**
