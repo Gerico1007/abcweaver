@@ -11,9 +11,9 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setup(
     name="abcweaver",
-    version="0.1.0",
-    author="G.Music Assembly",
-    author_email="assembly@gmusic.com",
+    version="0.2.0",
+    author="Gerico1007",
+    author_email="gerico@jgwill.com",
     description="🎼 ABC ↔ MusicXML Transformation Engine with Redis Stream Processing",
     long_description=long_description,
     long_description_content_type="text/markdown",
@@ -35,7 +35,7 @@ setup(
     install_requires=[
         "click>=8.0.0",
         "lxml>=4.9.0", 
-        "nyro>=1.0.0",
+        "nyro>=0.1.3",
         "pydantic>=2.0.0",
         "rich>=13.0.0",
     ],

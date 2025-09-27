@@ -7,9 +7,9 @@ and MusicXML format, enhanced with Redis stream processing capabilities.
 Part of the G.Music Assembly ecosystem.
 """
 
-__version__ = "0.1.0"
-__author__ = "G.Music Assembly"
-__email__ = "assembly@gmusic.com"
+__version__ = "0.2.0"
+__author__ = "Gerico1007"
+__email__ = "gerico@jgwill.com"
 
 from .core.abc_parser import ABCParser
 from .core.musicxml_handler import MusicXMLHandler
