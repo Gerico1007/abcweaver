@@ -269,18 +269,39 @@ class MusicXMLHandler:
     def _get_note_duration(self, note_element: ET.Element) -> str:
         """Convert MusicXML duration to ABC duration string"""
         duration = int(note_element.findtext('duration', '1'))
-        
-        # Convert based on divisions (assuming DEFAULT_DIVISIONS = 2)
-        if duration == 1:
-            return '1'  # eighth note
-        elif duration == 2:
-            return '2'  # quarter note
-        elif duration == 4:
-            return '4'  # half note
-        elif duration == 8:
-            return '8'  # whole note
+        divisions = self.get_divisions()
+
+        # Convert MusicXML duration to ABC duration
+        # MusicXML duration / divisions = note value in quarter notes
+        quarter_note_ratio = duration / divisions
+
+        # Map to ABC duration strings
+        if quarter_note_ratio == 0.125:
+            return '/8'    # thirty-second note
+        elif quarter_note_ratio == 0.25:
+            return '/4'    # sixteenth note
+        elif quarter_note_ratio == 0.5:
+            return '/2'    # eighth note
+        elif quarter_note_ratio == 1.0:
+            return '1'     # quarter note (base unit)
+        elif quarter_note_ratio == 2.0:
+            return '2'     # half note
+        elif quarter_note_ratio == 4.0:
+            return '4'     # whole note
+        elif quarter_note_ratio == 8.0:
+            return '8'     # double whole note
         else:
-            return str(duration // DEFAULT_DIVISIONS)
+            # Handle other durations proportionally
+            if quarter_note_ratio < 1.0:
+                # Fractional note
+                frac = 1.0 / quarter_note_ratio
+                if frac == int(frac):
+                    return f'/{int(frac)}'
+                else:
+                    return '/2'  # Default to eighth note for odd fractions
+            else:
+                # Whole number note
+                return str(int(quarter_note_ratio))
     
     def _musicxml_to_abc_pitch(self, step: str, octave: int) -> str:
         """Convert MusicXML pitch to ABC notation"""

@@ -31,13 +31,16 @@ INSTRUMENTS = {
 DEFAULT_DIVISIONS = 2
 
 # ABC note duration mappings
+# In ABC notation: no suffix = quarter note (base unit)
+# '2' = half note, '4' = whole note, etc.
 ABC_DURATIONS = {
-    '1': 1,    # eighth note
-    '2': 2,    # quarter note
-    '4': 4,    # half note
-    '8': 8,    # whole note
-    '/2': 0.5, # sixteenth note
-    '/4': 0.25, # thirty-second note
+    '1': 1,      # quarter note (base unit)
+    '2': 2,      # half note
+    '4': 4,      # whole note
+    '8': 8,      # double whole note
+    '/2': 0.5,   # eighth note (half of quarter)
+    '/4': 0.25,  # sixteenth note (quarter of quarter)
+    '/8': 0.125, # thirty-second note
 }
 
 # ABC octave modifiers

@@ -61,7 +61,7 @@ class ABCParser:
     
     def __init__(self):
         # Regex patterns for ABC parsing
-        self.note_pattern = re.compile(r"([a-gA-GzZ][',]*)(\d*|/\d*)")
+        self.note_pattern = re.compile(r"([a-gA-GzZ][',]*)(\d+|/\d+|)")
         self.header_pattern = re.compile(r"^([A-Z]):\s*(.+)$")
         
     def parse_abc_string(self, abc_string: str) -> List[ABCNote]:

@@ -11,7 +11,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setup(
     name="abcweaver",
-    version="0.2.0",
+    version="0.2.1",
     author="Gerico1007",
     author_email="gerico@jgwill.com",
     description="🎼 ABC ↔ MusicXML Transformation Engine with Redis Stream Processing",

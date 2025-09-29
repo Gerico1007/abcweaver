@@ -15,8 +15,8 @@ The ABCWeaver package has been successfully built and is ready for publication t
 ## 📦 Built Distribution Files
 
 The following files are ready for upload:
-- `dist/abcweaver-0.1.0-py3-none-any.whl` (Wheel distribution)
-- `dist/abcweaver-0.1.0.tar.gz` (Source distribution)
+- `dist/abcweaver-0.2.1-py3-none-any.whl` (Wheel distribution)
+- `dist/abcweaver-0.2.1.tar.gz` (Source distribution)
 
 ## 🔧 Publication Steps for Linux Environment
 
@@ -73,9 +73,9 @@ python -m twine upload dist/*
 ## 📋 Package Information
 
 - **Name**: abcweaver
-- **Version**: 0.1.0
+- **Version**: 0.2.1
 - **Description**: 🎼 ABC ↔ MusicXML Transformation Engine with Redis Stream Processing
-- **Author**: G.Music Assembly
+- **Author**: Gerico1007
 - **License**: MIT
 - **Python Support**: >=3.8
 - **CLI Command**: `abcweaver`
@@ -113,10 +113,11 @@ python -c "import abcweaver; print(abcweaver.__version__)"
 ## 🚨 Important Notes
 
 1. **Package Name**: `abcweaver` is confirmed available on PyPI
-2. **Version**: Currently set to 0.1.0 (Alpha status)
+2. **Version**: Currently set to 0.2.1 (Alpha status)
 3. **Entry Point**: Package provides `abcweaver` CLI command
 4. **Repository**: https://github.com/gerico1007/abcweaver
 5. **License Warnings**: Consider updating `pyproject.toml` to use SPDX license format in future versions
+6. **Version 0.2.1**: Includes critical fix for Issue #3 - Duration calculation accuracy
 
 ## 🎼 G.Music Assembly Publication Record
 

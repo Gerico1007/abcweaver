@@ -44,28 +44,36 @@ def validate_file_path(file_path: str, must_exist: bool = True) -> Path:
 def format_duration(abc_duration: str, divisions: int = DEFAULT_DIVISIONS) -> int:
     """
     Convert ABC duration to MusicXML duration.
-    
+
     Args:
         abc_duration: ABC duration string (e.g., '2', '4', '/2')
         divisions: MusicXML divisions per quarter note
-        
+
     Returns:
         MusicXML duration value
     """
     if not abc_duration:
-        abc_duration = '1'  # Default to eighth note
-    
+        abc_duration = '1'  # Default to quarter note (base unit)
+
     # Handle fraction durations
     if abc_duration.startswith('/'):
         denominator = int(abc_duration[1:])
         base_duration = 1.0 / denominator
     else:
         base_duration = ABC_DURATIONS.get(abc_duration, 1)
-    
+
     # Convert to MusicXML duration
-    # In ABC, '1' = eighth note, '2' = quarter note
-    # In MusicXML with divisions=2, quarter note = 2
-    return int(base_duration * divisions)
+    # In ABC: '1' = quarter note (base unit), '2' = half note, '4' = whole note
+    # In MusicXML with divisions=2: quarter note = 2, half note = 4, whole note = 8
+    # Formula: abc_duration_multiplier * divisions = musicxml_duration
+    result = base_duration * divisions
+
+    # Handle fractional results appropriately
+    if result < 1.0 and result > 0:
+        # For very small durations, round to nearest integer (minimum 1)
+        return max(1, round(result))
+    else:
+        return int(result)
 
 
 def parse_metadata(metadata_str: Optional[str]) -> Dict[str, Any]:

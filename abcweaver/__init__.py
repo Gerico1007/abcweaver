@@ -7,7 +7,7 @@ and MusicXML format, enhanced with Redis stream processing capabilities.
 Part of the G.Music Assembly ecosystem.
 """
 
-__version__ = "0.2.0"
+__version__ = "0.2.1"
 __author__ = "Gerico1007"
 __email__ = "gerico@jgwill.com"
 
